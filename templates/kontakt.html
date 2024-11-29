@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legia Warszawa - Kontakt i Sugestie</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Legia Warszawa - Kontakt i Sugestie<img src="/static/img/arkaaaplan.jpg" alt="log" id="log"></h1>
+        <nav>
+            <ul>
+                <li><a href="/">Strona Główna</a></li>
+                <li><a href="/products">Produkty</a></li>
+                <li><a href="/kontakt">Kontakt</a></li>
+                <li><a href="/o-nas">O Nas</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="content">
+        <h2 class="section-title">Formularz Sugestii</h2>
+        <p>Masz pomysł lub uwagi dotyczące działalności klubu? Wypełnij poniższy formularz, a my z chęcią się z nimi zapoznamy.</p>
+        <form action="/submit-kontakt" method="post">
+            <div class="form-group">
+                <label for="name">Imię i nazwisko:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Adres email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="suggestion">Twoja sugestia:</label>
+                <textarea id="suggestion" name="suggestion" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="button">Wyślij</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>© 2024 Legia Warszawa Fan Page. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+</body>
+</html>

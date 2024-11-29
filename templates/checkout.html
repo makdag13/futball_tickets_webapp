@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Produkty Legia Warszawa</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Podsumowanie Zamówienia<img src="/static/img/arkaaaplan.jpg" alt="log" id="log"></h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Strona Główna</a></li>
+                <li><a href="/products">Produkty</a></li>
+                <li><a href="/kontakt">Kontakt</a></li>
+                <li><a href="/o-nas">O Nas</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Twoje Zamówienie</h2>
+        <section>
+            <h3>Produkty w Koszyku:</h3>
+            <ul id="order-products">
+                <!-- Ürünler buraya eklenecek -->
+            </ul>
+        </section>
+
+        <h3>Twoje dane</h3>
+        <form id="checkout-form" action="/submit_order" method="POST">
+            <label for="first-name">Imię:</label>
+            <input type="text" id="first-name" name="first_name" required>
+
+            <label for="last-name">Nazwisko:</label>
+            <input type="text" id="last-name" name="last_name" required>
+
+            <label for="phone">Telefon:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <h3>Podsumowanie Zakupu</h3>
+            <p><strong>Łączna cena: <span id="total-price-summary">0 PLN</span></strong></p>
+            
+            <button type="submit">Złóż Zamówienie</button>
+        </form>
+
+        <script>
+            // Verileri alıp yerleştirme
+            var products = JSON.parse(decodeURIComponent("{{ request.args.get('products') }}"));
+            var totalPrice = 0;
+            var productList = document.getElementById('order-products');
+            var totalPriceElement = document.getElementById('total-price-summary');
+            
+            products.forEach(function(product) {
+                var li = document.createElement('li');
+                li.textContent = product.name + " - " + product.price + " PLN";
+                productList.appendChild(li);
+                totalPrice += parseFloat(product.price);
+            });
+
+            totalPriceElement.textContent = totalPrice + " PLN";
+        </script>
+    </main>
+    <footer>
+        <p>&copy; 2024 Oficjalny Sklep Legii Warszawa</p>
+    </footer>
+</body>
+</html>
+ 

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legia Warszawa - Ana Sayfa</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Oficjalna Strona Legii Warszawa <img src="/static/img/arkaaaplan.jpg" alt="log" id="log"></h1>
+        
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Strona Główna</a></li>
+                <li><a href="/products">Produkty</a></li>
+                <li><a href="/kontakt">Kontakt</a></li>
+                <li><a href="/o-nas">O Nas</a></li>
+            </ul>
+            
+        </nav>
+    </header>
+    <section class="welcome">
+        <h2>Witamy!</h2>
+        <p>Legia Warszawa to jeden z najprestigjniejszych klubów piłkarskich w Polsce. Nasz klub znany jest z historycznych sukcesów i pasjonujących fanów.</p>
+        <a href="/products" class="button">Zobacz nasze produkty</a>
+    </section>
+    <img src="/static/img/stad1.jpeg" alt="gazetka" id="gazetka">
+    <main class="con1">
+        
+        <section>
+            <h3>Witamy!</h3>
+            <p>Kliknij poniższy przycisk, aby kupić bilety na mecz:</p>
+            <form action="/customer-info" method="get">
+                <input type="submit" value="Kup Bilet" class="kup-bilet-button">
+            </form>
+        </section>
+    </main><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    
+
+    <footer>
+        <p>&copy; 2024 Legia Warszawa</p>
+    </footer>
+</body>
+</html>

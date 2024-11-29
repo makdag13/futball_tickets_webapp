@@ -1,0 +1,117 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    background-image: url('/static/img/arkaaaplan.jpg'); /* Arka Plan */
+    background-size: cover;
+    background-position: center;
+
+}
+header {
+    background: rgba(0, 77, 0, 0.9); /* Koyu yeşil arka plan */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Gölgelendirme */
+    max-width:98%;
+}
+h1{
+    background: rgba(0, 77, 0, 0.9); /* Koyu yeşil arka plan */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Gölgelendirme */
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em; /* Başlık boyutu */
+    transition: color 0.3s, transform 0.3s; /* Animasyon efekti */
+}
+
+nav ul li a:hover {
+    color: #cfcfcf; /* Hover rengi */
+    transform: scale(1.1); /* Hover sırasında büyüme */
+}
+
+.hero {
+    position: relative;
+    text-align: center;
+    color: white;
+    margin: 20px 0;
+}
+.hero img {
+    width: 120%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(26, 25, 25, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero h2 {
+    font-size: 3rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+.content {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: antiquewhite;
+    max-width: 60%;
+    margin: 0 auto; /* Yatayda ortalamayı sağlar */
+}
+
+.content h2 {
+    color: #b71c1c;
+    margin-top: 0;
+    font-size: 2.5rem;
+}
+.content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 20px 0;
+}
+.content img {
+    max-width: 80%;
+    height: auto;
+    margin: 20px 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+footer {
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    padding: 15px 10px;
+}
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+#log{
+    max-width: 90px;
+    
+    
+}

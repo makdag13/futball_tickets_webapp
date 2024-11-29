@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Information</title>
+    <link rel="stylesheet" href="/static/style.css">
+    
+</head>
+<body>
+   
+    <h1>Match and Ticket Information<img src="/static/img/arkaaaplan.jpg" alt="log" id="log"></h1>
+    <img src="/static/img/cennik.webp" alt="cennik" id="cennik">
+    <img src="/static/img/fikstur.PNG" alt="fikstur" id="fikstur">
+   
+    <form action="/submit-mecz" method="post" id="dane_bilety">
+        <img src="/static/img/stad.jpg" alt="stadium" id="stadium">
+        <label for="mecz">Match:</label>
+        <select name="mecz" id="druzyna">
+            <option value="Lech Poznań - Legia Varşova  02/12/2024">Lech Poznań - Legia Varşova  02/12/2024</option>
+            <option value="Raków Częst - Legia Varşova  09/12/2024">Raków Częst - Legia Varşova  09/12/2024</option>
+            <option value="Pogoń Szczecin - Legia Varşova  14/12/2024">Pogoń Szczecin - Legia Varşova  14/12/2024</option>
+            <option value="Widzew Łódź - Legia Varşova  21/12/2024">Widzew Łódź - Legia Varşova  21/12/2024</option>
+            <option value="Zagłębie Lubin - Legia Varşova  28/12/2024">Zagłębie Lubin - Legia Varşova  28/12/2024</option>
+            <option value="Górnik Zabrze - Legia Varşova  05/01/2025">Górnik Zabrze - Legia Varşova  05/01/2025</option>
+            <option value="Lechia Gdańsk - Legia Varşova  12/01/2025">Lechia Gdańsk - Legia Varşova  12/01/2025</option>
+        </select><br>
+       
+        <label for="seat_number">Seat Number:</label>
+        <select id="seat_number" name="seat_number" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="6">5</option>
+            <option value="7">6</option>
+            <option value="8">7</option>
+            <option value="9">8</option>
+            <option value="10">9</option>
+            <option value="11">10</option>
+            <option value="5">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+
+        </select><br>
+        <label for="ticket_type">Ticket Type:</label>
+        <select id="ticket_type" name="ticket_type" required>
+            <option value="vip">VIP</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+            
+        </select><br>
+        <input type="submit" value="Wyslij  " class="ticket-submit">
+    </form>
+    
+</body>
+</html>

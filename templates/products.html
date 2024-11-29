@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produkty Legia Warszawa</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Oficjalne Produkty Legii Warszawa<img src="/static/img/arkaaaplan.jpg" alt="log" id="log"></h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Strona Główna</a></li>
+                <li><a href="/products">Produkty</a></li>
+                <li><a href="/kontakt">Kontakt</a></li>
+                <li><a href="/o-nas">O Nas</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="page_products">
+        <h2>Najlepiej Sprzedające Się Produkty</h2>
+        <section class="products" id="products01">
+            <article class="product">
+                <img src="{{ url_for('static', filename='img/koszulka.jpg') }}" alt="Koszulka">
+                <h3>Koszulka</h3>
+                <p>Kup teraz oficjalną koszulkę Legii Warszawa!</p>
+                <div class="product-details">
+                    <span class="price">Cena: 299 PLN</span>
+                    <button class="add-to-cart" data-name="Koszulka" data-price="299">Dodaj do Koszyka</button>
+                </div>
+            </article>
+            <article class="product">
+                <img src="{{ url_for('static', filename='img/czapka.jpg') }}" alt="Czapka">
+                <h3>Czapka</h3>
+                <p>Czapka z logo Legii Warszawa – wspieraj swoją drużynę!</p>
+                <div class="product-details">
+                    <span class="price">Cena: 99 PLN</span>
+                    <button class="add-to-cart" data-name="Czapka" data-price="99">Dodaj do Koszyka</button>
+                </div>
+            </article>
+            <article class="product">
+                <img src="{{ url_for('static', filename='img/szalik.jpg') }}" alt="Szalik">
+                <h3>Szalik</h3>
+                <p>Szalik Legii, idealny na zimne dni!</p>
+                <div class="product-details">
+                    <span class="price">Cena: 79 PLN</span>
+                    <button class="add-to-cart" data-name="Szalik" data-price="79">Dodaj do Koszyka</button>
+                </div>
+            </article>
+        </section>
+        <section class="cart">
+            <h2>Twój Koszyk</h2>
+            <ul id="cart-items">
+                <li><b>Koszyk jest pusty.</b></li>
+            </ul>
+            <p><strong>Suma: <span id="total-price">0</span> PLN</strong></p>
+            <button id="checkout-button" onclick="goToCheckout()">Przejdź do płatności</button>
+
+<script>
+    function goToCheckout() {
+        // Siparişteki ürün bilgilerini almak
+        var products = [];
+        var productElements = document.querySelectorAll('.product');
+        productElements.forEach(function(product) {
+            var productName = product.querySelector('h3').innerText;
+            var productPrice = product.querySelector('.price').innerText.split(' ')[1]; // "Cena: 299 PLN" formatında
+            products.push({ name: productName, price: productPrice });
+        });
+
+        // Form verilerini göndererek checkout sayfasına yönlendirme
+        var productData = JSON.stringify(products);
+        window.location.href = "/checkout?products=" + encodeURIComponent(productData);
+    }
+</script>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Oficjalny Sklep Legii Warszawa</p>
+    </footer>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
